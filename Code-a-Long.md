@@ -2,7 +2,7 @@
 
 - New folder
 - Index.html
-- Copy and paste heroes.js / data
+- Copy and paste movie.js / data
 - Copy and paste style.css
 - New js folder
 - Create base HTML
@@ -67,13 +67,11 @@ This will interact with the document and thus must wait for the page to load, th
 
 Remember we are seperating the data and the presentation, so what is the data and movie we want to display
 
-```js
-var movie = {
-    name: "Infinity Wars",
-    year: 2018,
-    details: "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
-}
-```
+Its in the movie.js file
+
+So in the movie.js, I added has information on some of the superheroes in the movie. There was so many that this is a selection. As you can see we have lots of infrormation 
+
+There are better ways to use a JSON, but this is the most straightforward. Lets focus on the name and Real Name attributes. 
 
 I copy the details from Imdb
 
@@ -134,15 +132,45 @@ Great so thats the basics of templating, but we could have just put this informa
 
 ## Display Hero Names
 
-So in the heroes.js, I added has information on some of the superheroes in the movie. There was so many that this is a selection. As you can see we have lots of infrormation 
-
-There are better ways to use a JSON, but this is the most straightforward. Lets focus on the name and Real Name attributes. 
+### Setup
 
 ```ht
 <script type="text/javascript" src="js/heroes.js"></script>
 ```
 
+In main.js, as you can see we now have access to heroes
 
+```js
+console.log(heroes);
+```
 
+delete console.log
 
+### For Each
+
+Start by adding a wrapper div
+
+Now, this time we have an array of JSON we are working with, handlebars has some syntax to easily support this
+
+Use each and the name of the variable
+
+Normal HTML comments wont work since your in a script tag/handlebars so  use {{! Done for each heror }}
+
+The variable we want are name and real_name
+
+```html
+        <script type="text/x-handlebars-template" id="heroList">
+            <div class="heroWrapper">
+                <h2>Starring:</h2>
+                {{#each heroes}}
+                <div class="heroWrapper">
+                     {{! Done for each hero }}
+                    <div>{{name}} ({{real_name}})</div>
+                </div>
+                {{/each}}
+            </div>
+        </script>
+```
+
+### For Each JS
 

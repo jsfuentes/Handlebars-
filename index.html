@@ -3,14 +3,23 @@
         <title> Infinity Wars </title>
         <script defer src="js/handlebars-v4.0.11.js"></script>
 <!--        <script defer src="js/boilerplate.js"></script>-->
-        <script type="text/javascript" src="js/heroes.js"></script>
+        <script type="text/javascript" src="js/movie.js"></script>
         <script type="text/x-handlebars-template" id="movieIntro"> 
-            <div class="templateWrapper">
+            <div class="movieWrapper">
                 <h1>{{name}}</h1>
                 <h2>{{year}}</h2>
                 <h3>{{details}}</h3>
+                <h2>Starring:</h2>
+                {{#each heroes}}
+                <div class="heroWrapper">
+                     {{! Done for each hero }}
+                    <div>{{name}} ({{real_name}})</div>
+                    <div></div>
+                </div>
+                {{/each}}
             </div>
         </script>
+        
         <script defer src="js/main.js"></script>
     </head>
     <body>
@@ -18,5 +27,6 @@
           Greetings, one and all!
         </div>
         <div id="movieContainer"></div>
+        <div id="heroContainer"></div>
     </body>
 </html>
