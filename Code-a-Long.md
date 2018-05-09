@@ -2,9 +2,7 @@
 
 - New folder
 - Index.html
-- Copy and paste movie.js / data
-- Copy and paste style.css
-- New js folder
+- New js file
 - Create base HTML
 
 ```html
@@ -33,7 +31,7 @@
 
 - Add script to HTML
 
-- Now we have handlebars functionality
+- Now we have handlebars functionality(Handlebars in Console)
 
   ##  Write Template
 
@@ -43,14 +41,14 @@
 
   some class name to style it 
 
-  We just want this to be general movie template
+  We just want this to be general student template
 
   ```html
-  <script type="text/x-handlebars-template" id="itemTemplate"> 
+  <script type="text/x-handlebars-template" id="personTemplate"> 
   	<div class="templateWrapper">
   		<div>{{name}}</div>
           <div>{{year}}</div>
-          <div>{{details}}</div>
+          <div>{{major}}</div>
       </div>
   </script>
   ```
@@ -65,17 +63,20 @@ This will interact with the document and thus must wait for the page to load, th
 
 ## Handlebars in javascript
 
-Remember we are seperating the data and the presentation, so what is the data and movie we want to display
+Remember we are seperating the data and the presentation, so what is the data and person we want to display
 
-Its in the movie.js file
-
-So in the movie.js, I added has information on some of the superheroes in the movie. There was so many that this is a selection. As you can see we have lots of infrormation 
-
-There are better ways to use a JSON, but this is the most straightforward. Lets focus on the name and Real Name attributes. 
+```js
+var person = {
+    name: "Jorge Fuentes",
+    major: "Computer Science",
+    year: "3rd",
+    hungry: "True"
+}
+```
 
 I copy the details from Imdb
 
-### So How does Handlebars put these two together
+### So how does Handlebars put these two together
 
 We need to do 3 things
 
@@ -92,7 +93,7 @@ Switch back and copy id
 console.log
 
 ```js
-var template = document.getElementById("movieIntro").innerHTML;
+var template = document.getElementById("personTemplate").innerHTML;
 console.log(template);
 ```
 
@@ -106,7 +107,7 @@ Handlebars we installed, we included it above the main included so this class/ob
 
 ```js
 var renderer = Handlebars.compile(template);
-var result = renderer(movie);
+var result = renderer(person);
 console.log(result);
 ```
 
@@ -119,32 +120,37 @@ Where are we putting it?
 Go back to html and add 
 
 ```html
-<div id="movieContainer"></div>
+<div id="personContainer"></div>
 ```
 
 Put our result there
 
 ```Js
-document.getElementById("movieContainer").innerHTML = result;
+document.getElementById("personContainer").innerHTML = result;
 ```
 
 Great so thats the basics of templating, but we could have just put this information in the html. Lets try something a little more complex
 
-## Display Hero Names
+### If
 
-### Setup
-
-```ht
-<script type="text/javascript" src="js/heroes.js"></script>
+```html
+<script type="text/x-handlebars-template" id="personTemplate"> 
+	<div class="templateWrapper">
+		<div>{{name}}</div>
+        <div>{{year}}</div>
+        <div>{{major}}</div>
+        {{#if hungry}}
+    </div>
+</script>
 ```
 
-In main.js, as you can see we now have access to heroes
 
-```js
-console.log(heroes);
-```
 
-delete console.log
+## Display Persons
+
+
+
+
 
 ### For Each
 
