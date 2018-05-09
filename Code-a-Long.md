@@ -174,3 +174,61 @@ The variable we want are name and real_name
 
 ### For Each JS
 
+Nothing
+
+### Helpers
+
+Notice this syntax for each, each space then the variable 
+
+This does mean that variable names can't have a space in them
+
+Each is a helper in handlebars, and we can define our own 
+
+So have the name side by side is a little weird, lets make the real name italic and put parenthesis around it
+
+Now we could just add it in the html, [do it]. But, Ill do it to try to showcase a basic form of helpers
+
+```html
+                    <div>{{name}} {{#format_name}}{{real_name}{{/format_name}}</div>
+```
+
+SO we didn't define the helper yet, so lets do that
+
+```js
+Handlebars.registerHelper('format_name', function(options) {
+    console.log(options);
+    return options.fn(this);
+});
+```
+
+Now what is this? Referring to?
+
+Lets find out: console.log(this);
+
+So its the object being used in the context, the individual hero
+
+Options.fn(this) ? console.log, its the original data that was supposed to be there
+
+Its weird to have groot and groot twice, so lets use our helper to do some more logic
+
+```js
+Handlebars.registerHelper('format_name', function(options) {
+    var newHTML = "<i>("+ options.fn(this) + ")</i>";
+    if(this.name.toLowerCase() != this.real_name.toLowerCase()) {
+        return newHTML;
+    } else{
+        return;
+    }
+});
+```
+
+
+
+## CSS
+
+link the css sheet
+
+```html
+<link rel="stylesheet" type="text/css" href="style.css"/>
+```
+
