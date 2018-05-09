@@ -3,18 +3,20 @@
         <title> Infinity Wars </title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script defer src="js/handlebars-v4.0.11.js"></script>
-<!--        <script defer src="js/boilerplate.js"></script>-->
         <script type="text/javascript" src="js/movie.js"></script>
         <script type="text/x-handlebars-template" id="movieIntro"> 
             <div class="movieWrapper">
-                <h1>{{name}}</h1>
-                <h2>{{year}}</h2>
+                <div class="title">{{name}}</div>
                 <h3>{{details}}</h3>
-                <h2>Starring:</h2>
+                {{#with production}}
+                    <div> {{year}} - {{director}} - {{production_company}}-{{distrubution_company}} </div>
+                {{/with}}
+                <h1>Starring:</h1>
                 {{#each heroes}}
                 <div class="heroWrapper">
                      {{! Done for each hero }}
                     <div>{{name}} {{#format_name}}{{real_name}}{{/format_name}}</div>
+<!--                    <div>{{abilities}}</div>-->
                 </div>
                 {{/each}}
             </div>
@@ -24,5 +26,6 @@
     </head>
     <body>
         <div id="movieContainer"></div>
+        <div></div>
     </body>
 </html>
