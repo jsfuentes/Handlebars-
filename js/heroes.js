@@ -1,4 +1,4 @@
-[{
+var heroes = [{
   "First Appearance": "Fantastic Four Vol. 1 #52 (1966)",
   "Abilities": "T'Challa is a brilliant tactician, strategist, scientist, tracker and a master of all forms of unarmed combat whose unique hybrid fighting style incorporates acrobatics and aspects of animal mimicry. T'Challa being a royal descendent of a warrior race is also a master of armed combat, able to use a variety of weapons but prefers unarmed combat. He is a master planner who always thinks several steps ahead and will go to extreme measures to achieve his goals and protect the kingdom of Wakanda. less",
   "name": "BLACK PANTHER",
