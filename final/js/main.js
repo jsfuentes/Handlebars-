@@ -1,9 +1,9 @@
-//Define Helper
+//Define Helpers
 Handlebars.registerHelper('format_name', function(options) {
     var newHTML = "<i>("+ options.fn(this) + ")</i>";
-    if(this.name.toLowerCase() != this.real_name.toLowerCase()) {
+    if (this.name.toLowerCase() != this.real_name.toLowerCase()) {
         return newHTML;
-    } else{
+    } else {
         return;
     }
 });
