@@ -1,0 +1,57 @@
+.movieWrapper {
+    text-align: center;
+/*    background: black;*/
+    margin: 10% 15% 10% 15%;
+    padding: 5%;
+    background-color: black;
+    opacity: .7;
+}
+
+#movieContainer {
+    width: 100%;
+    min-height: 120px;
+    max-height: auto;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+    color: white;
+
+}
+
+.title {
+    font-size: 78px;
+    margin-bottom: 10px;
+    border-bottom: solid skyblue;
+}
+
+body {
+  background: #fff;
+  background: radial-gradient(skyblue, black);
+  font-family: "Open Sans", sans-serif;
+    color: white;
+}
+
+a {
+  color: #61B9A9;
+  transition: 0.5s;
+}
+
+a:hover, a:active, a:focus {
+  color: #03c5ec;
+  outline: none;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin: 10px 0 20px 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 30px 0 10px 0;
+  font-weight: 700;
+  line-height: 66px;
+  text-transform: uppercase;
+}

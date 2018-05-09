@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title> Infinity Wars </title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script defer src="js/handlebars-v4.0.11.js"></script>
+        <script type="text/javascript" src="js/movie.js"></script>
+        <script type="text/x-handlebars-template" id="movieIntro"> 
+            <div class="movieWrapper">
+                <div class="title">{{name}}</div>
+                <h3>{{details}}</h3>
+                {{#with production}}
+                    <div> {{year}} - {{director}} - {{production_company}}-{{distrubution_company}} </div>
+                {{/with}}
+                <h1>Starring:</h1>
+                {{#each heroes}}
+                <div class="heroWrapper">
+                    {{! Done for each hero }}
+                    <div>{{name}} {{#format_name}}{{real_name}}{{/format_name}}</div>
+                </div>
+                {{/each}}
+                {{#if nearby_theater}}
+                    <h3> Go watch now at {{nearby_theater}} </h3>
+                {{else}}
+                    <h3> Showing nowhere near you :(</h3>
+                {{/if}}
+
+            </div>
+        </script>
+        
+        <script type="text/x-handlebars-template" id="heroList"> 
+            <div class="title">The Heroes</div>
+            {{#each heroes}}
+            <div class="heroList" id="{{name}}">
+                <h1>{{name}}</h1>
+                <h3>Real Name:</h3>
+                <div>{{real_name}}</div>
+                <h3>Powers:</h3>
+                <div>{{powers}}</div>
+                <h3>Abilites:</h3>
+                <div>{{abilities}}</div>
+            </div>
+            {{/each}}
+        </script>
+        
+        <script defer src="js/main.js"></script>
+    </head>
+    <body>
+        <div id="movieContainer"></div>
+        <div id="heroContainer"></div>
+    </body>
+</html>

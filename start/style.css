@@ -14,7 +14,8 @@
     float: left;
     margin: 3px;
     padding: 3px;
-    background: radial-gradient(skyblue, black);
+    color: white;
+
 }
 
 .title {
@@ -25,7 +26,7 @@
 
 body {
   background: #fff;
-  color: white;
+  background: radial-gradient(skyblue, black);
   font-family: "Open Sans", sans-serif;
 }
 
