@@ -131,35 +131,9 @@ document.getElementById("personContainer").innerHTML = result;
 
 Great so thats the basics of templating, but we could have just put this information in the html. Lets try something a little more complex
 
-
-
-Lets add favorite_class
-
-```js
-    favorite_class: {
-        name: "CS32",
-        teacher: "David Smallberg",
-        grade: "AAA"
-    }
-```
-
-```html
-<div>
-    {{favorite_class.name}}
-</div>
-```
-
-Pathing , but you can also 
-
-```html
-{{#with favorite_class}}
-	<div> Class: {{name}} </div>
-	<div> Teacher: {{teacher}} </div>
-	<div> grade: {{grade}}</div>
-{{/with}}
-```
-
 ### If
+
+Can put any true conditional here, if you want more complicated logic then just wait, ILL teach you to do it with helpers
 
 ```html
 <script type="text/x-handlebars-template" id="personTemplate"> 
@@ -228,7 +202,7 @@ Each is a helper in handlebars, and we can define our own
 
 Lets say we wanted to bold all hall names
 
-Now we could just add it in the html, [do it]. But, Ill do it to try to showcase a basic form of helpers
+Now we could just add it in the html. But, Ill do it to try to showcase a basic form of helpers
 
 ```html
 <div>{{name}} {{#bold}} {{hall_name}} {{/bold}}</div>
@@ -238,7 +212,7 @@ SO we didn't define the helper yet, so lets do that
 
 ```js
 Handlebars.registerHelper('bold', function(options) {
-    console.log(options);
+    console.log(options.fn(this));
     return options.fn(this);
 });
 ```

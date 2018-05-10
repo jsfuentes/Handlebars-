@@ -13,10 +13,12 @@
                 {{/with}}
                 <h1>Starring:</h1>
                 {{#each heroes}}
-                <div class="heroWrapper">
-                    {{! Done for each hero }}
-                    <div>{{name}} {{#format_name}}{{real_name}}{{/format_name}}</div>
-                </div>
+                    {{#link_hero}}
+                        <div class="heroWrapper">
+                            {{! Done for each hero }}
+                            <div>{{name}} {{#format_name}}{{real_name}}{{/format_name}}</div>
+                        </div>
+                    {{/link_hero}}
                 {{/each}}
                 {{#if nearby_theater}}
                     <h3> Go watch now at {{nearby_theater}} </h3>
